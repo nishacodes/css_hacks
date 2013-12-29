@@ -1,1 +1,26 @@
+h1 {
+  text-align: center;
+}
 
+h2 {
+  font-family: 'Lato','Roboto', 'Helvetica', 'Arial', sans-serif;
+  font-size: 50px;
+  text-align: center;
+}
+
+
+
+.container {
+  margin: 0 auto;
+  height: 840px;
+  background-color: red;
+}
+
+
+
+.col-md-6 {
+  background-color: rgba(255,255,255,0.5);
+  height: 400px;
+  text-align: center;
+
+}

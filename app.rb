@@ -9,7 +9,7 @@ module Something
    
    
     get '/' do
-      @hack = Entry.new(1,"Show transparent cover on hover")
+      @hack = Entry.new(1,"Flip effect")
       @hack.css = "
 .flip-container {
   position:absolute;
@@ -73,7 +73,6 @@ module Something
   width:184px;
   height:184px;
   display:inline-block;
-  border:8px solid #1abc9c;
 }"
       @hack.html_display = "
 &lt;div class='flip-container'&gt;

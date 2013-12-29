@@ -18,17 +18,11 @@
     <div class="tab-pane active" id="result">
       
       <!-- HTML FOR ENTRY HERE -->
-      <div class="result"> 
-        
-      </div>
+      <%= @hack.html_render %>
       
       <!-- CSS FOR ENTRY HERE -->
       <style>
-      .result {
-        background-color: blue;
-        height: 100px;
-        width: 100px;
-      }
+      <%= @hack.css %>
       </style>
     
     </div>
@@ -40,9 +34,9 @@
           <%=@hack.css %>
         </pre>
       </div>
-      <div class="col-md-6 code"> 
+      <div class="col-md-6" id="code"> 
         <pre class="prettyprint"> 
-          <%=@hack.html %>
+          <%=@hack.html_display %>
         </pre>
       </div>
     </div>

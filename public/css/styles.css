@@ -69,13 +69,16 @@ pre .atv, code .atv { color: #fff; } /* html/xml attribute value - pink */
 pre .dec, code .dec { color: #3387CC; } /* decimal - blue */
 
 pre.prettyprint, code.prettyprint {
-        background-color: #5a5a58;
+        /*background-color: #5a5a58;*/
+        background-color: rgba(0,0,0,0.5);
         -moz-border-radius: 8px;
         -webkit-border-radius: 8px;
         -o-border-radius: 8px;
         -ms-border-radius: 8px;
         -khtml-border-radius: 8px;
         border-radius: 8px;
+        height: 500px;
+        overflow: scroll;
 }
 
 pre.prettyprint {

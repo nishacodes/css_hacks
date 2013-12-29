@@ -1,14 +1,63 @@
-
 <div class="container">
+  
+  <!-- TITLE -->
   <div class="col-md-12"> 
-    <h2> title </h2>
+    <h2> <%= "##{@hack.id}.  #{@hack.title}" %></h2>
   </div>
 
-  <div class="col-md-6"> 
-    code snippet
-  </div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs">
+    <li><a href="#result" data-toggle="tab">Result</a></li>
+    <li><a href="#code" data-toggle="tab">Code</a></li>
+    <!-- <li><a href="#html" data-toggle="tab">HTML</a></li> -->
+  </ul>
 
-  <div class="col-md-6 visualization"> 
-   visualization
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <!-- RESULTS TAB -->
+    <div class="tab-pane active" id="result">
+      
+      <!-- HTML FOR ENTRY HERE -->
+      <div class="result"> 
+        
+      </div>
+      
+      <!-- CSS FOR ENTRY HERE -->
+      <style>
+      .result {
+        background-color: blue;
+        height: 100px;
+        width: 100px;
+      }
+      </style>
+    
+    </div>
+    
+    <!-- CODE TAB -->
+    <div class="tab-pane" id="code">
+      <div class="col-md-6 code"> 
+        <pre class="prettyprint"> 
+          <%=@hack.css %>
+        </pre>
+      </div>
+      <div class="col-md-6 code"> 
+        <pre class="prettyprint"> 
+          <%=@hack.html %>
+        </pre>
+      </div>
+    </div>
+
   </div>
 </div>
+
+<!-- JS FOR TABS -->
+<script>
+  $('#myTab a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+  $('#myTab a[href="#result"]').tab('show') // Select tab by name
+  $('#myTab a:first').tab('show') // Select first tab
+  $('#myTab a:last').tab('show') // Select last tab
+  $('#myTab li:eq(2) a').tab('show') // Select third tab (0-indexed)
+</script>

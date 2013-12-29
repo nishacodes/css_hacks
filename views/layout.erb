@@ -2,13 +2,18 @@
 <html>
   <head>
     <title>CSS Hacks</title>
-
+    <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Nixie+One|Parisienne|Gilda+Display|Oleo+Script+Swash+Caps|Simonetta|PT+Mono|Josefin+Sans|Londrina+Outline|Alegreya+Sans|Open+Sans+Condensed:300|Open+Sans|Varela+Round|Amatic+SC|Text+Me+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
-     
+
+    <!-- PRETTYPRINT For Syntax Highlighting -->
+    <link href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+
+    <!-- STYLESHEETS -->
     <link href="/css/normalize_styles.css" rel="stylesheet" type="text/css"/>
-      <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"> <!-- Bootstrap -->
+    <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -16,16 +21,18 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-    <link href="/css/styles.css" rel="stylesheet" type="text/css"/>
   </head> 
   
   <body>
-      <%= simple_partial :_header %>
-      <%= yield %>
-      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <%= simple_partial :_header %>
+
+    <%= yield %>
+    
+    <!  -- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="https://code.jquery.com/jquery.js"></script>
-      <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="js/bootstrap.min.js"></script>
+      <body onload="prettyPrint()">
   </body>
   
 </html>

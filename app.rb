@@ -9,7 +9,7 @@ module Something
    
    
     get '/' do
-      @hack = Entry.new(1,"Flip effect")
+      @hack = Entry.new(1,"FLIP EFFECT")
       @hack.css = "
 .flip-container {
   position:absolute;
@@ -115,6 +115,14 @@ module Something
       erb :index
     end
 
+    post '/:id' do
+      @hack = Entry.new(params[:id],"#{params["title"]}")
+      @hack.css = params["css"]
+      @hack.html_render = params["html"]
+      @hack.html_display = @hack.html_render.gsub("<","&lt;").gsub(">","&gt;")
+      erb :index
+    end
+
     helpers do 
       def simple_partial(template)
         erb template
@@ -124,3 +132,9 @@ module Something
   end
 end
 
+# TO DO
+# incorporate database and have id numbers increment 
+# save entries to the database
+# style the form
+# figure out how to link to any part of the carousel with ID
+# responsive styling 

@@ -18,13 +18,13 @@
     <div class="tab-pane active" id="hack">
       
       <!-- HTML FOR ENTRY HERE -->
-      <%= @hack.html_render %>
-      
+      <div class="style-container"> <!-- TRYING TO USE THIS DIV TO CONTAIN STYLES TO ONLY APPLY WITHIN -->
+        <%= @hack.html_render %>
+      </div>
       <!-- CSS FOR ENTRY HERE -->
-      <style>
-      <%= @hack.css %>
-      </style>
-    
+        <style>
+          <%= @hack.css %>
+        </style>
     </div>
     
     <!-- CODE TAB -->

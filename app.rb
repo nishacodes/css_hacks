@@ -138,3 +138,4 @@ end
 # style the form
 # figure out how to link to any part of the carousel with ID
 # responsive styling 
+# ruby cycle through each hack for each slide

@@ -1,2 +1,2 @@
 require './app'
-run Something::App.new
+run Hacks::App.new

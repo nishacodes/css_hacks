@@ -1,15 +1,9 @@
-
-body {
- /* background-image: url('/images/teal-background.jpg');
-  background-size: 100%;*/
-}
-
 h1 { /*logo*/
   font-family: 'Open Sans','Roboto', 'Helvetica', 'Arial', sans-serif;
   color: gray;
   letter-spacing: 4px;
-  /*position: absolute;*/
-  margin-left: 20px;
+  position: relative;
+  left: 20px;
   font-size: 18pt;
   margin-bottom: 15px;
 }
@@ -47,18 +41,16 @@ h4 {/* html, css headings*/
   background-color: #D1AD1D;
 }
 
-
 .container {
   margin: 0 auto;
-  height: 900px;
+  min-height: 900px;
   /*background-color: rgba(255,255,255,0.5);*/
 }
 .col-md-6 {
   background-color: rgba(255,255,255,0.5);
   height: 400px;
-  
+  margin: 30px 0px;
 }
-
 
 img.arrow {
   width: 40%;
@@ -68,10 +60,11 @@ img.arrow {
   padding-top: 20%;
 }
 
-.result {
-text-align: center;
+.style-container {
+  padding: 50px;
+  text-align: center;
+  font-size: 16pt;
 }
-
 
 /* Pretty printing styles. Used with prettify.js. */
 /* Vim sunburst theme by David Leibovic */

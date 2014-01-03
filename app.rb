@@ -3,14 +3,29 @@ Bundler.require
 require './lib/entry.rb'
 
 
-module Something
+module Hacks
   class App < Sinatra::Application
-    
-   
    
     get '/' do
-      @hack = Entry.new(1,"FLIP EFFECT")
-      @hack.css = "
+      @hack = Entry.new(1,"FLIP EFFECT",
+        "<div class='flip-container'>
+  <div class='creation'>
+    <div class='front'>
+      <div class='cont'>
+        <p>
+          <span class='details'>Front</span>
+        </p>
+      </div>
+    </div>
+    <div class='back'>
+      <div class='cont'>
+        <p>
+          <span class='details'>Back</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>","
 .flip-container {
   position:absolute;
   left:50%;
@@ -73,53 +88,12 @@ module Something
   width:184px;
   height:184px;
   display:inline-block;
-}"
-      @hack.html_display = "
-&lt;div class='flip-container'&gt;
-  &lt;div class='creation'&gt;
-    &lt;div class='front'&gt;
-      &lt;div class='cont'&gt;
-        &lt;p&gt;
-          &lt;span class='details'&gt;Front&lt;/span&gt;
-        &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class='back'&gt;
-      &lt;div class='cont'&gt;
-        &lt;p&gt;
-          &lt;span class='details'&gt;Back&lt;/span&gt;
-        &lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;"
-      @hack.html_render = "<div class='flip-container'>
-  <div class='creation'>
-    <div class='front'>
-      <div class='cont'>
-        <p>
-          <span class='details'>Front</span>
-        </p>
-      </div>
-    </div>
-    <div class='back'>
-      <div class='cont'>
-        <p>
-          <span class='details'>Back</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</div>"
-      @result_class = "css#{@hack.id}"
+}")
       erb :index
     end
 
     post '/:id' do
-      @hack = Entry.new(params[:id],"#{params["title"]}")
-      @hack.css = params["css"]
-      @hack.html_render = params["html"]
-      @hack.html_display = @hack.html_render.gsub("<","&lt;").gsub(">","&gt;")
+      @hack = Entry.new(params[:id],"#{params["title"]}", "#{params["html"]}", "#{params["css"]}")
       erb :index
     end
 

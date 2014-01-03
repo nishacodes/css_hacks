@@ -7,15 +7,15 @@
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs">
-    <li><a href="#hack" data-toggle="tab">Hack</a></li>
-    <li><a href="#code" data-toggle="tab">Code</a></li>
+    <li><a href=".hack" data-toggle="tab">Hack</a></li>
+    <li><a href=".code" data-toggle="tab">Code</a></li>
     <!-- <li><a href="#html" data-toggle="tab">HTML</a></li> -->
   </ul>
 
   <!-- Tab panes -->
   <div class="tab-content">
     <!-- RESULTS TAB -->
-    <div class="tab-pane active" id="hack">
+    <div class="tab-pane active hack">
       
       <!-- HTML FOR ENTRY HERE -->
       <div class="style-container"> <!-- TRYING TO USE THIS DIV TO CONTAIN STYLES TO ONLY APPLY WITHIN -->
@@ -28,14 +28,14 @@
     </div>
     
     <!-- CODE TAB -->
-    <div class="tab-pane" id="code">
-      <div class="col-md-6 code"> 
+    <div class="tab-pane code">
+      <div class="col-md-6"> 
         <h4> CSS </h4>
         <pre class="prettyprint"> 
           <%=@hack.css %>
         </pre>
       </div>
-      <div class="col-md-6" id="code"> 
+      <div class="col-md-6"> 
         <h4> HTML </h4>
         <pre class="prettyprint"> 
           <%=@hack.html_display %>
@@ -48,13 +48,12 @@
 
 <!-- JS FOR TABS -->
 <script>
-  $('#myTab a[href="#hack"]').click(function (e) {
+  $('#myTab a[href=".hack"]').click(function (e) {
     e.preventDefault()
     $(this).tab('show')
   })
-  $('#myTab a[href="#code"]').click(function (e) {
+  $('#myTab a[href=".code"]').click(function (e) {
     e.preventDefault()
     $(this).tab('show')
   })
- 
 </script>

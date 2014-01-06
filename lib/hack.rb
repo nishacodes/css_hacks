@@ -7,7 +7,6 @@ class Hack
   property :css, Text
   property :created_at, DateTime
   property :updated_at, DateTime
-  test
 
   before :save, :format_html
  
